@@ -2,6 +2,6 @@ FROM openjdk:8-jre-alpine
 
 WORKDIR /app  
 
-COPY build/libs/my-application-1.0.jar /app/my-application-1.0.jar
+COPY build/libs/hello-world-java-V1.jar app.jar
 
 ENTRYPOINT ["java", "-jar", "my-application-1.0.jar"]
