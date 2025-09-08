@@ -6,6 +6,16 @@ pipeline {
                 git branch: 'master', url: 'https://github.com/TXX588356/CICD_Exercise.git'
             }
         }
+
+
+stage('Debug JAR') {
+    steps {
+        bat 'jar tf build\\libs\\hello-world-java-V1.jar | findstr HelloWorld.class'
+        bat 'jar xf build\\libs\\hello-world-java-V1.jar META-INF/MANIFEST.MF'
+        bat 'type META-INF\\MANIFEST.MF'
+    }
+}
+
         stage('Build') {
             steps { bat 'gradlew build'}
         }
