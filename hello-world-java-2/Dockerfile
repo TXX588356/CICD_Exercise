@@ -1,9 +1,7 @@
-FROM openjdk:8-jre
+FROM openjdk:8-jre-alpine
 
-WORKDIR /app
+WORKDIR /app  
 
-COPY . . 
+COPY build/libs/my-application-1.0.jar /app/my-application-1.0.jar
 
-EXPOSE 9090
-
-CMD ['java', '-jar', 'build/libs/hello-world-java-V1.jar']
+ENTRYPOINT ['java', '-jar', 'my-application-1.0.jar']
