@@ -14,9 +14,14 @@ pipeline {
         }
         stage('Deploy') {
             steps { 
-                powershell 'java -jar build/libs/hello-world-java-V1.jar'
+                powershell 'docker build -t deployment_env .'
             }           
         }    
+        stage('Production') {
+            steps {
+                powershell 'docker run deployment_env'
+            }
+        }
 }
 
 post {
