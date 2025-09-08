@@ -5,7 +5,7 @@ import static org.junit.Assert.*;
 public class HelloWorldTest {
     @Test
     public void testGetGreeting() {
-        HelloWorld helloWorld = new HelloWorld();
+        Main helloWorld = new Main();
         assertEquals("Hello, World!", helloWorld.getGreeting());
     }
 }
