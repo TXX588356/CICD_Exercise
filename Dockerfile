@@ -4,4 +4,4 @@ WORKDIR /app
 
 COPY build/libs/hello-world-java-V1.jar app.jar
 
-ENTRYPOINT ["java", "-jar", "my-application-1.0.jar"]
+ENTRYPOINT ["java", "-jar", "hello-world-java-V1.jar"]
